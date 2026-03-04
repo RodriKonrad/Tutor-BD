@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Chat{% endblock %}
+
+{% block content %}
+  <div class="chat-container" aria-live="polite">
+    <div id="messages" class="messages" role="log"></div>
+
+    <form id="chat-form" class="chat-form" action="#" method="post">
+      <input id="chat-input" name="message" type="text" autocomplete="off" placeholder="Escribe un mensaje..." aria-label="Mensaje" />
+      <button id="send-btn" type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} - Ayuda{% endblock %}
+
+{% block content %}
+  <h1>Ayuda — Uso de la aplicación</h1>
+
+  <section>
+    <h2>Descripción</h2>
+    <p>Esta aplicación proporciona una interfaz de chat simple basada en Blueprints y plantillas Jinja. La página principal permite enviar mensajes y recibir respuestas simuladas (eco).</p>
+  </section>
+
+  <section>
+    <h2>Cómo usar</h2>
+    <ol>
+      <li>Ve a la página <a href="{{ url_for('main.index') }}">Inicio</a>.</li>
+      <li>Escribe tu mensaje en el campo inferior y pulsa <strong>Enter</strong> o el botón <strong>Enviar</strong>.</li>
+      <li>Verás el mensaje en la conversación; actualmente la aplicación devuelve una respuesta simulada "Echo: ...".</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Atajos y accesibilidad</h2>
+    <ul>
+      <li><strong>Enter</strong>: enviar mensaje (sin Shift).</li>
+      <li>El chat mantiene el foco en el campo de entrada tras enviar.</li>
+      <li>La zona de mensajes usa roles ARIA para mejorar la compatibilidad con lectores de pantalla.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Integración con backend</h2>
+    <p>Ahora mismo las respuestas son locales y simuladas por `static/js/chat.js`. Para conectar con un backend real puedes:</p>
+    <ul>
+      <li>Enviar mensajes a una ruta POST (`/api/message`) y devolver JSON con la respuesta.</li>
+      <li>Usar WebSockets (por ejemplo `flask-socketio`) para comunicación en tiempo real.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Solución de problemas</h2>
+    <ul>
+      <li>Si no ves estilos, asegúrate de que `static/css/style.css` está cargado y recarga la página (Ctrl+F5).</li>
+      <li>Si el JavaScript no responde, abre la consola del navegador y revisa errores en `chat.js`.</li>
+      <li>Verifica que la aplicación Flask está corriendo: `python run.py`.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contacto</h2>
+    <p>Para más ayuda, abre un issue en el repositorio o contacta al mantenedor del proyecto.</p>
+  </section>
+
+{% endblock %}

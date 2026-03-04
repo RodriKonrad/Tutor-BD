@@ -3,52 +3,80 @@
 {% block title %}{{ title }} - Ayuda{% endblock %}
 
 {% block content %}
-  <h1>Ayuda — Uso de la aplicación</h1>
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h1>❓ Centro de Ayuda</h1>
 
-  <section>
-    <h2>Descripción</h2>
-    <p>Esta aplicación proporciona una interfaz de chat simple basada en Blueprints y plantillas Jinja. La página principal permite enviar mensajes y recibir respuestas simuladas (eco).</p>
-  </section>
+    <section>
+      <h2>📚 ¿Qué es este tutor?</h2>
+      <p>Es una aplicación educativa que te ayuda a aprender <strong>bases de datos</strong> mediante un método socrático. En lugar de darte respuestas directas, el tutor te guía con preguntas reflexivas para que descubras el conocimiento por ti mismo.</p>
+      <p><strong>Metodología:</strong> Te haremos preguntas que te ayudarán a pensar críticamente sobre:</p>
+      <ul>
+        <li>Sintaxis y estructura de SQL</li>
+        <li>Diseño de bases de datos y normalización</li>
+        <li>Análisis y optimización de consultas</li>
+        <li>Mejores prácticas en gestión de datos</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Cómo usar</h2>
-    <ol>
-      <li>Ve a la página <a href="{{ url_for('main.index') }}">Inicio</a>.</li>
-      <li>Escribe tu mensaje en el campo inferior y pulsa <strong>Enter</strong> o el botón <strong>Enviar</strong>.</li>
-      <li>Verás el mensaje en la conversación; actualmente la aplicación devuelve una respuesta simulada "Echo: ...".</li>
-    </ol>
-  </section>
+    <section>
+      <h2>🚀 Cómo empezar</h2>
+      <ol>
+        <li>Ve a la página <a href="{{ url_for('main.index') }}">Inicio</a></li>
+        <li>Escribe tu pregunta o comparte tu código SQL en el campo de chat</li>
+        <li>El tutor analizará tu pregunta y te dará retroalimentación guiada</li>
+        <li>Continúa la conversación para explorar los conceptos más profundamente</li>
+      </ol>
+    </section>
 
-  <section>
-    <h2>Atajos y accesibilidad</h2>
-    <ul>
-      <li><strong>Enter</strong>: enviar mensaje (sin Shift).</li>
-      <li>El chat mantiene el foco en el campo de entrada tras enviar.</li>
-      <li>La zona de mensajes usa roles ARIA para mejorar la compatibilidad con lectores de pantalla.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>💡 Ejemplos de preguntas que puedes hacer</h2>
+      <ul>
+        <li><code>¿Cuál es la diferencia entre INNER JOIN y LEFT JOIN?</code></li>
+        <li><code>Mi consulta: SELECT * FROM usuarios WHERE edad > 18</code> — ¿está bien escrita?</li>
+        <li><code>¿Qué significa la primera forma normal (1NF)?</code></li>
+        <li><code>¿Cómo optimizo una consulta lenta?</code></li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Integración con backend</h2>
-    <p>Ahora mismo las respuestas son locales y simuladas por `static/js/chat.js`. Para conectar con un backend real puedes:</p>
-    <ul>
-      <li>Enviar mensajes a una ruta POST (`/api/message`) y devolver JSON con la respuesta.</li>
-      <li>Usar WebSockets (por ejemplo `flask-socketio`) para comunicación en tiempo real.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>⌨️ Atajos del teclado</h2>
+      <ul>
+        <li><kbd>Enter</kbd> - Enviar mensaje</li>
+        <li><kbd>Shift + Enter</kbd> - Nueva línea en el mensaje</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Solución de problemas</h2>
-    <ul>
-      <li>Si no ves estilos, asegúrate de que `static/css/style.css` está cargado y recarga la página (Ctrl+F5).</li>
-      <li>Si el JavaScript no responde, abre la consola del navegador y revisa errores en `chat.js`.</li>
-      <li>Verifica que la aplicación Flask está corriendo: `python run.py`.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>🎯 Consejos para aprender mejor</h2>
+      <ul>
+        <li><strong>Sé específico:</strong> Comparte el código SQL completo, no solo fragmentos</li>
+        <li><strong>Explica tu razonamiento:</strong> Cuéntale al tutor qué crees que ocurre y por qué</li>
+        <li><strong>Haz preguntas de seguimiento:</strong> No dudes en profundizar en los conceptos</li>
+        <li><strong>Practica:</strong> Aplica lo que aprendas en ejercicios prácticos</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Contacto</h2>
-    <p>Para más ayuda, abre un issue en el repositorio o contacta al mantenedor del proyecto.</p>
-  </section>
+    <section>
+      <h2>❓ Preguntas frecuentes</h2>
+      <dl style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+        <dt style="font-weight: bold; color: #2c3e50; margin-top: 10px;">¿Cuál es la mejor forma de aprender SQL?</dt>
+        <dd>Practica escribiendo consultas regularmente. Empieza con SELECT simples y ve aumentando la complejidad con JOINs, subconsultas y funciones de agregación.</dd>
+
+        <dt style="font-weight: bold; color: #2c3e50; margin-top: 10px;">¿Qué debo saber antes de empezar?</dt>
+        <dd>Conceptos básicos como tablas, filas y columnas. Pero no te preocupes, el tutor te ayudará a aprender desde cero si es necesario.</dd>
+
+        <dt style="font-weight: bold; color: #2c3e50; margin-top: 10px;">¿Puedo compartir código SQL largo?</dt>
+        <dd>¡Por supuesto! El tutor puede analizar consultas complejas, ERDs y ayudarte a identificar problemas y mejoras.</dd>
+
+        <dt style="font-weight: bold; color: #2c3e50; margin-top: 10px;">¿Hay límite de consultas que puedo hacer?</dt>
+        <dd>No. Haz todas las preguntas que necesites. El aprendizaje se basa en la práctica y la exploración.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>📞 Soporte</h2>
+      <p>Si encuentras un problema técnico o tienes sugerencias, por favor contacta al equipo de desarrollo o abre un issue en nuestro repositorio.</p>
+    </section>
+  </div>
 
 {% endblock %}

@@ -3,13 +3,25 @@
 {% block title %}{{ title }} - Chat{% endblock %}
 
 {% block content %}
-  <div class="chat-container" aria-live="polite">
-    <div id="messages" class="messages" role="log"></div>
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(39, 174, 96, 0.1) 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #3498db;">
+      <h2 style="margin-top: 0; color: #2c3e50;">Bienvenido al Chat de Tutoría</h2>
+      <p style="margin: 10px 0; color: #555;">Haz preguntas sobre bases de datos y recibe guía socrática. Nuestro tutor IA te ayudará a descubrir los conceptos a través de preguntas reflexivas.</p>
+      <ul style="margin: 15px 0; color: #555; padding-left: 20px;">
+        <li><strong>SQL:</strong> Haz preguntas sobre sintaxis, consultas y optimización</li>
+        <li><strong>Teoría:</strong> Aprende sobre normalización, esquemas y relaciones</li>
+        <li><strong>Análisis:</strong> Comparte tu código SQL para obtener retroalimentación</li>
+      </ul>
+    </div>
 
-    <form id="chat-form" class="chat-form" action="#" method="post">
-      <input id="chat-input" name="message" type="text" autocomplete="off" placeholder="Escribe un mensaje..." aria-label="Mensaje" />
-      <button id="send-btn" type="submit">Enviar</button>
-    </form>
+    <div class="chat-container" aria-live="polite">
+      <div id="messages" class="messages" role="log"></div>
+
+      <form id="chat-form" class="chat-form" action="#" method="post">
+        <input id="chat-input" name="message" type="text" autocomplete="off" placeholder="Escribe tu pregunta sobre bases de datos..." aria-label="Mensaje" />
+        <button id="send-btn" type="submit">Enviar</button>
+      </form>
+    </div>
   </div>
 
   <script src="{{ url_for('static', filename='js/chat.js') }}"></script>

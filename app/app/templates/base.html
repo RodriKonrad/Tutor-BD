@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Flask App{% endblock %}</title>
+    <title>{% block title %}Tutor BD{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
     <header>
+      <div style="text-align: center; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.2);">
+        <h1 style="margin: 0; font-size: 28px; color: #fff;">🎓 Tutor de Bases de Datos</h1>
+        <p style="margin: 5px 0; color: #ecf0f1; font-size: 13px;">Aprende bases de datos con un tutor socrático impulsado por IA</p>
+      </div>
       <nav>
-        <a href="{{ url_for('main.index') }}">Inicio</a>
-        <a href="{{ url_for('auth.login') }}">Login</a>
-        <a href="{{ url_for('main.ayuda') }}">Ayuda</a>
+        <a href="{{ url_for('main.index') }}">💬 Inicio</a>
+        <a href="{{ url_for('auth.login') }}">🔐 Login</a>
+        <a href="{{ url_for('main.ayuda') }}">❓ Ayuda</a>
       </nav>
     </header>
 
@@ -29,8 +33,8 @@
       {% block content %}{% endblock %}
     </main>
 
-    <footer>
-      <p>Aplicación Flask con Blueprints</p>
+    <footer style="text-align: center; padding: 20px; color: #666; margin-top: 40px; border-top: 1px solid #ddd;">
+      <p style="margin: 0; font-size: 13px;">Tutor de Bases de Datos © 2026 | Creado con Flask y IA</p>
     </footer>
   </body>
 </html>
